@@ -21,3 +21,4 @@ jobs:
         run: |
           echo "Hello from ${{ github.event.inputs.InputParameter }}"
           echo "branch is ${{ github.event.inputs.Branch }}"
+          echo 'github.event is ${{ toJson(github.event) }}'
