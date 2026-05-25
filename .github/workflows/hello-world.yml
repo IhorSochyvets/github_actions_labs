@@ -3,6 +3,8 @@ name: Hello World
 on:
   push:
   workflow_dispatch:
+  schedule:
+    - cron: '10 12 * * *'
 
 jobs:
   say-hello:
