@@ -1,0 +1,17 @@
+name: Hello Input
+
+on:
+  workflow_dispatch:
+    inputs:
+      InputParameter:
+        description: "Name to print"
+        required: true
+        default: "World"
+
+jobs:
+  say-hello:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print message
+        run: echo "Hello from ${{ github.event.inputs.InputParameter }}"
