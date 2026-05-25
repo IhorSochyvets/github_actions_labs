@@ -7,6 +7,10 @@ on:
         description: "Name to print"
         required: true
         default: "World"
+      Branch:
+        description: "Branch name"
+        required: true
+        default: "main"
 
 jobs:
   say-hello:
@@ -14,4 +18,6 @@ jobs:
 
     steps:
       - name: Print message
-        run: echo "Hello from ${{ github.event.inputs.InputParameter }}"
+        run: |
+          echo "Hello from ${{ github.event.inputs.InputParameter }}"
+          echo "branch is ${{ github.event.inputs.Branch }}"
